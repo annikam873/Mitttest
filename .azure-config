@@ -1,0 +1,4 @@
+RESOURCE_GROUP=rg-hello-cicd
+ACR_NAME=acrhellocicd9202
+LOCATION=swedencentral
+CONTAINER_APP=ca-news-flash
