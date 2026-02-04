@@ -1,159 +1,38 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om oss</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+{% extends "base.html" %}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+{% block title %}About - News Flash{% endblock %}
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-        }
-
-        h1 {
-            color: #1a1a1a;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        p {
-            color: #555;
-            font-size: 1.05em;
-            line-height: 1.6;
-        }
-
-        .status-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-
-        .status-box strong {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .feature-list li {
-            padding: 12px;
-            margin-bottom: 8px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-            background: #667eea;
-            color: white;
-            border-radius: 50%;
-            font-size: 0.9em;
-            flex-shrink: 0;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            gap: 10px;
-            color: #764ba2;
-        }
-
-        @media (max-width: 600px) {
-            .card {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
+{% block content %}
+<section class="features">
     <div class="container">
-        <div class="card">
-            <h1>🏗️ Om projektet</h1>
-            
-            <div class="content">
-                <p>Den här sidan demonstrerar arkitekturen för en <strong>Three-Tier Application</strong> med moderna designprinciper.</p>
-
-                <div class="status-box">
-                    <strong>Status:</strong>
-                    Allt fungerar perfekt! ✨
-                </div>
-
-                <p>Vår applikation är uppbyggd enligt följande lager:</p>
-
-                <ul class="feature-list">
-                    <li><strong>Presentation Layer:</strong> Moderna HTML/CSS-templates med responsive design</li>
-                    <li><strong>Business Layer:</strong> Affärslogik och tjänster</li>
-                    <li><strong>Data Layer:</strong> Datahantering och repositories</li>
-                </ul>
-
-                <p>Denna arkitektur garanterar separation of concerns och gör koden enklare att underhålla och skala.</p>
+        <h1 class="section-title">About News Flash</h1>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📰</div>
+                <h3 class="card-title">Quality News</h3>
+                <p class="card-description">We curate the highest quality news stories from trusted sources around the world.</p>
             </div>
-
-            <a href="/" class="back-link">← Tillbaka till start</a>
+            <div class="card">
+                <div class="card-icon">🔐</div>
+                <h3 class="card-title">Privacy First</h3>
+                <p class="card-description">Your data is sacred to us. We never share or sell your information to third parties.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">Always Updated</h3>
+                <p class="card-description">Get real-time updates on stories that matter most to you as they develop.</p>
+            </div>
         </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 0.75rem;">
+            <h2 style="margin-bottom: 1rem; font-size: 1.5rem;">Our Mission</h2>
+            <p style="font-size: 1.05rem; line-height: 1.8;">To deliver timely, accurate, and relevant news to our readers, helping them stay informed about the world around them. We believe in the power of information and are committed to providing unbiased reporting.</p>
+        </div>
+
+        <p style="margin-top: 2rem; text-align: center; color: var(--text-light);">
+            <a href="{{ url_for('public.index') }}" style="color: var(--primary); text-decoration: none; font-weight: 600;">&larr; Back to Home</a>
+        </p>
     </div>
-</body>
-</html>
+</section>
+{% endblock %}

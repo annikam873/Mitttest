@@ -1,53 +1,42 @@
 {% extends "base.html" %}
 
-{% block title %}News Flash - Stay Informed{% endblock %}
+{% block title %}Home - News Flash{% endblock %}
 
 {% block content %}
 <section class="hero">
-    <div class="hero__container">
-        <h1 class="hero__title">Stay Ahead of the Curve</h1>
-        <p class="hero__subtitle">
-            Get the latest tech news delivered straight to your inbox.
-            No spam, just the stories that matter.
-        </p>
-        <a href="{{ url_for('public.subscribe') }}" class="btn btn--primary hero__cta">
-            Subscribe Now
-        </a>
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Stay Ahead of the Curve</h1>
+            <p class="hero-subtitle">Get breaking news and trending stories delivered to your inbox. Never miss what matters.</p>
+            <a href="{{ url_for('public.subscribe') }}" class="cta-button">Subscribe Now</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Subscribe?</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">📬</div>
+                <h3 class="card-title">Daily Digest</h3>
+                <p class="card-description">Curated news summaries delivered every morning to keep you informed.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3 class="card-title">Breaking News</h3>
+                <p class="card-description">Get instant alerts on major news developments as they happen.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3 class="card-title">Personalized</h3>
+                <p class="card-description">Choose topics that interest you and get stories tailored for you.</p>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
-
-{% block extra_css %}
-<style>
-    .hero {
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
-        color: white;
-        padding: 6rem 2rem;
-        text-align: center;
-        min-height: 60vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .hero__container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .hero__title {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero__subtitle {
-        font-size: 1.25rem;
-        margin-bottom: 2.5rem;
-        opacity: 0.95;
-        max-width: 600px;
         margin-left: auto;
         margin-right: auto;
         line-height: 1.7;
