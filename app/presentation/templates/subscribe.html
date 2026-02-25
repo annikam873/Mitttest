@@ -1,53 +1,50 @@
 {% extends "base.html" %}
 
-{% block title %}Subscribe - News Flash{% endblock %}
+{% block title %}Send Wishes - [PERSON_NAME]'s Celebration{% endblock %}
 
 {% block content %}
+
 <section class="form-section">
-    <div class="container" style="max-width: 500px;">
-        <h1 class="section-title">Subscribe to News Flash</h1>
-        <p class="section-subtitle">Get the latest news delivered to your inbox every week.</p>
+<div class="container" style="max-width: 500px;">
+<h1 class="section-title">Leave a Message for [PERSON_NAME]</h1>
+<p class="section-subtitle">Drop your details below to add your name to the official celebration list!</p>
 
-        {% if error %}
-        <div class="alert alert-error">
-            {{ error }}
-        </div>
-        {% endif %}
+{% if error %}
 
-        <form class="form" action="{{ url_for('public.subscribe') }}" method="POST">
-            <div class="form-group">
-                <label class="form-label" for="email">Email Address *</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-input"
-                    placeholder="you@example.com"
-                    value="{{ email or '' }}"
-                    required
-                >
-            </div>
+<div class="alert alert-error">
+{{ error }}
+</div>
+{% endif %}
 
-            <div class="form-group">
-                <label class="form-label" for="name">Name (optional)</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-input"
-                    placeholder="Your name"
-                    value="{{ name or '' }}"
-                >
-            </div>
+<form class="form" action="{{ url_for('public.subscribe') }}" method="POST">
+<div class="form-group">
+<label class="form-label" for="email">Your Email Address *</label>
+<input
+type="email"
+id="email"
+name="email"
+class="form-input"
+placeholder="friend@example.com"
+value="{{ email or '' }}"
+required
+>
+</div>
 
-            <button type="submit" class="button button-primary">
-                Subscribe
-            </button>
-        </form>
+<div class="form-group">
+<label class="form-label" for="name">Your Name (optional)</label>
+<input
+type="text"
+id="name"
+name="name"
+class="form-input"
+placeholder="e.g., Bestie"
+value="{{ name or '' }}"
+>
+</div>
 
-        <p class="back-link">
-            <a href="{{ url_for('public.index') }}">&larr; Back to Home</a>
-        </p>
-    </div>
-</section>
-{% endblock %}
+<button type="submit" class="button button-primary">
+Send Love
+</button>
+</form>
+
+<p class="back-link"> <a href="{{ url_for('public.index') }}">&larr; Back to the Party</a> </p> </div> </section> {% endblock %}

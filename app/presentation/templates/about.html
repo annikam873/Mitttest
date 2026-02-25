@@ -1,38 +1,33 @@
 {% extends "base.html" %}
 
-{% block title %}About - News Flash{% endblock %}
+{% block title %}About - [PERSON_NAME]'s Celebration{% endblock %}
 
 {% block content %}
+
 <section class="features">
-    <div class="container">
-        <h1 class="section-title">About News Flash</h1>
-        
-        <div class="cards-grid">
-            <div class="card">
-                <div class="card-icon">📰</div>
-                <h3 class="card-title">Quality News</h3>
-                <p class="card-description">We curate the highest quality news stories from trusted sources around the world.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔐</div>
-                <h3 class="card-title">Privacy First</h3>
-                <p class="card-description">Your data is sacred to us. We never share or sell your information to third parties.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3 class="card-title">Always Updated</h3>
-                <p class="card-description">Get real-time updates on stories that matter most to you as they develop.</p>
-            </div>
-        </div>
+<div class="container">
+<h1 class="section-title">All About [PERSON_NAME]</h1>
+<div class="cards-grid">
+<div class="card">
+<div class="card-icon">💖</div>
+<h3 class="card-title">Amazing Memories</h3>
+<p class="card-description">We are curating the best moments and stories we've shared together over the years.</p>
+</div>
+<div class="card">
+<div class="card-icon">🎁</div>
+<h3 class="card-title">Total Appreciation</h3>
+<p class="card-description">You mean the world to us. This space is dedicated entirely to celebrating you!</p>
+</div>
+<div class="card">
+<div class="card-icon">🎉</div>
+<h3 class="card-title">Endless Fun</h3>
+<p class="card-description">Let the good times roll as we gather to say: [MAIN_MESSAGE]</p>
+</div>
+</div>
 
-        <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 0.75rem;">
-            <h2 style="margin-bottom: 1rem; font-size: 1.5rem;">Our Mission</h2>
-            <p style="font-size: 1.05rem; line-height: 1.8;">To deliver timely, accurate, and relevant news to our readers, helping them stay informed about the world around them. We believe in the power of information and are committed to providing unbiased reporting.</p>
-        </div>
+<div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; border-radius: 0.75rem;">
+<h2 style="margin-bottom: 1rem; font-size: 1.5rem;">Our Goal Today</h2>
+<p style="font-size: 1.05rem; line-height: 1.8;">To make sure [PERSON_NAME] feels incredibly loved, appreciated, and celebrated by everyone who cares about them. We believe in showing our love, and we are committed to making this an unforgettable occasion.</p>
+</div>
 
-        <p style="margin-top: 2rem; text-align: center; color: var(--text-light);">
-            <a href="{{ url_for('public.index') }}" style="color: var(--primary); text-decoration: none; font-weight: 600;">&larr; Back to Home</a>
-        </p>
-    </div>
-</section>
-{% endblock %}
+<p style="margin-top: 2rem; text-align: center; color: var(--text-light);"> <a href="{{ url_for('public.index') }}" style="color: var(--primary); text-decoration: none; font-weight: 600;">&larr; Back to the Party</a> </p> </div> </section> {% endblock %}
